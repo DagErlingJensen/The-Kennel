@@ -182,8 +182,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 43260531}
-  m_LocalRotation: {x: 0.11668444, y: 1e-45, z: 0, w: 0.99316907}
-  m_LocalPosition: {x: 2.9, y: 7.16, z: -217.04001}
+  m_LocalRotation: {x: 0.116684444, y: 1e-45, z: -0, w: 0.99316907}
+  m_LocalPosition: {x: 2.9, y: 7.1600003, z: -217.04001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1015915259}
@@ -316,6 +316,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7352850996057936406, guid: 81e0217ffe4d76d48b747649f07b66ff, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7352850996058011600, guid: 81e0217ffe4d76d48b747649f07b66ff, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7352850996058022496, guid: 81e0217ffe4d76d48b747649f07b66ff, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7352850996058033904, guid: 81e0217ffe4d76d48b747649f07b66ff, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7352850996058040374, guid: 81e0217ffe4d76d48b747649f07b66ff, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7352850996058056320, guid: 81e0217ffe4d76d48b747649f07b66ff, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7352850997328453621, guid: 81e0217ffe4d76d48b747649f07b66ff, type: 3}
       propertyPath: m_Name
       value: Dog
@@ -435,7 +459,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2021178655527167927, guid: d3af3072d46e21d48a241e8da9211a12, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.11668444
+      value: 0.116684444
       objectReference: {fileID: 0}
     - target: {fileID: -2021178655527167927, guid: d3af3072d46e21d48a241e8da9211a12, type: 3}
       propertyPath: m_LocalRotation.y
@@ -511,7 +535,7 @@ MonoBehaviour:
   m_ZDamping: 1
   m_AngularDampingMode: 0
   m_PitchDamping: 0
-  m_YawDamping: 0
+  m_YawDamping: 3
   m_RollDamping: 0
   m_AngularDamping: 0
 --- !u!114 &1015915261
@@ -892,8 +916,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1971266590}
-  m_LocalRotation: {x: 0.11668444, y: 1e-45, z: 0, w: 0.99316907}
-  m_LocalPosition: {x: 2.9, y: 7.16, z: -217.04001}
+  m_LocalRotation: {x: 0.116684444, y: 1e-45, z: 0, w: 0.99316907}
+  m_LocalPosition: {x: 2.9, y: 7.1600003, z: -217.04001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

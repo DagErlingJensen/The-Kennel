@@ -5,17 +5,16 @@ using UnityEngine;
 public class DoorOpen : MonoBehaviour
 {
 
-    //public Animation doorOpenAnim;
-
+    public DoorController doorControllerScript;
     void Start()
     {
-        //doorOpenAnim = GetComponent<Animation>();
+        doorControllerScript = GameObject.Find("Door").GetComponent<DoorController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
 
 
@@ -23,6 +22,7 @@ public class DoorOpen : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Door"))
         {
+            doorControllerScript.openDoor = true;
             Debug.Log("Door Open");
         }
     }
