@@ -41,13 +41,22 @@ public class MovementController : MonoBehaviour
 			transform.Rotate(transform.up, Input.GetAxis("Horizontal"));
 
 		HandleMovement();
-		
+
+
 		Debug.DrawRay(transform.position, _moveDirection * 5.1f, Color.green);
 
 	}
 
 	void HandleMovement()
 	{
+
+		if (InputDirectionIntoWall())
+		{
+			Debug.Log("hitting wall");
+
+			MoveParallelToWall();
+			return;
+		}
 		if (RaycastHittingGround())
 		{
 			MoveParallelToGround();
@@ -61,6 +70,14 @@ public class MovementController : MonoBehaviour
 		}
 	}
 
+	private void MoveParallelToWall()
+	{
+		Vector3 crossedDirection = Vector3.Cross(_inputDirection, _hit.normal);
+		Vector3 parrallelDirection = Vector3.Cross(_hit.normal, crossedDirection);
+		parrallelDirection.y = 0;
+		_moveDirection = parrallelDirection;
+	}
+
 	private void MoveParallelToGround()
 	{
 		Vector3 crossedDirection = Vector3.Cross(_inputDirection, _hit.normal);
@@ -70,14 +87,23 @@ public class MovementController : MonoBehaviour
 	private void MoveAirborne()
 	{
 		_moveDirection = Vector3.SmoothDamp(_moveDirection, _inputDirection * _airborneSpeedMultiplier, ref _airborneMoveVelocity, 0.4f);
-		Debug.DrawRay(_colliderCenter, _moveDirection * 2, Color.blue);
 	}
 
 	private bool RaycastHittingGround()
 	{
-		Debug.DrawRay(_colliderCenter, -transform.up, Color.grey);
 
 		if (Physics.Raycast(_colliderCenter, -transform.up, out _hit, 1, _ignoreLayer))
+		{
+			if (_hit.collider.isTrigger) return false;
+			else return true;
+			
+		}
+		return false;
+	}
+
+	private bool InputDirectionIntoWall()
+	{
+		if (Physics.BoxCast(transform.position + (transform.up * _stepHeight), boxExtents, _inputDirection, out _hit, Quaternion.LookRotation(_inputDirection), 1.1f, _ignoreLayer))
 		{
 			if (_hit.collider.isTrigger) return false;
 			else return true;
@@ -87,7 +113,6 @@ public class MovementController : MonoBehaviour
 
 	private bool MoveDirectionIntoWall()
 	{
-		Debug.DrawRay(transform.position + (transform.up * (_stepHeight + 0.1f)), _moveDirection, Color.red);
 		if (Physics.Raycast(transform.position + (transform.up * (_stepHeight + 0.1f)), _moveDirection, out _hit, _capsuleCollider.radius * 1.1f, _ignoreLayer))
 		{
 			if (_hit.collider.isTrigger) return false;
