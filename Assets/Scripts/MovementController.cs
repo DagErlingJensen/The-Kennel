@@ -8,6 +8,7 @@ public class MovementController : MonoBehaviour
 	[SerializeField] private float _jumpLength;
 	[SerializeField] private float _stepHeight;
 	[SerializeField] private LayerMask _ignoreLayer;
+	[SerializeField] private Camera _camera;
 
 	private Rigidbody _rigidbody;
 	private CapsuleCollider _capsuleCollider;
@@ -19,8 +20,8 @@ public class MovementController : MonoBehaviour
 	private RaycastHit _hit;
 	DogGrounding _dogGrounding;
 	private Vector3 boxExtents = new Vector3(0.4f, 0.1f, 0.4f);
-
 	public Vector3 MoveDirection { get => _moveDirection; }
+	public Vector3 GroundNormal { get; private set; }
 
 	private void Awake()
 	{
@@ -30,10 +31,14 @@ public class MovementController : MonoBehaviour
 		_ignoreLayer = ~_ignoreLayer;
 	}
 
+
+
 	private void Update()
 	{
 		_inputDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+
 		_inputDirection = transform.TransformDirection(_inputDirection);
+		
 
 		_colliderCenter = transform.TransformPoint(_capsuleCollider.center);
 
@@ -41,7 +46,6 @@ public class MovementController : MonoBehaviour
 			transform.Rotate(transform.up, Input.GetAxis("Horizontal"));
 
 		HandleMovement();
-
 
 		Debug.DrawRay(transform.position, _moveDirection * 5.1f, Color.green);
 
@@ -87,6 +91,7 @@ public class MovementController : MonoBehaviour
 	private void MoveAirborne()
 	{
 		_moveDirection = Vector3.SmoothDamp(_moveDirection, _inputDirection * _airborneSpeedMultiplier, ref _airborneMoveVelocity, 0.4f);
+		transform.rotation = Quaternion.LookRotation(Vector3.Lerp(transform.forward, _moveDirection, Time.deltaTime * 2));
 	}
 
 	private bool RaycastHittingGround()
@@ -94,7 +99,11 @@ public class MovementController : MonoBehaviour
 
 		if (Physics.Raycast(_colliderCenter, -transform.up, out _hit, 1, _ignoreLayer))
 		{
-			if (_hit.collider.isTrigger) return false;
+			if (_hit.collider.isTrigger)
+			{
+				GroundNormal = _hit.normal;
+				return false;
+			}
 			else return true;
 			
 		}
