@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3407893285903531143}
   - component: {fileID: 9187261358680551152}
   m_Layer: 0
-  m_Name: Torch
+  m_Name: TorchBridge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
