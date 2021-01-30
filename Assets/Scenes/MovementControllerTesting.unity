@@ -318,29 +318,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 601165991, guid: 46a4041cbea110b4d86b08cb7e606239, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2715203369327533057, guid: 46a4041cbea110b4d86b08cb7e606239, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.11668451
+      value: 0.116684504
       objectReference: {fileID: 0}
     - target: {fileID: 2715203369327533057, guid: 46a4041cbea110b4d86b08cb7e606239, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 4.3195504e-16
+      value: 0.0000000073996866
       objectReference: {fileID: 0}
     - target: {fileID: 2715203369327533057, guid: 46a4041cbea110b4d86b08cb7e606239, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 1.4771277e-17
+      value: -8.6936736e-10
       objectReference: {fileID: 0}
     - target: {fileID: 2715203370210894421, guid: 46a4041cbea110b4d86b08cb7e606239, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.11668451
+      value: 0.116684504
       objectReference: {fileID: 0}
     - target: {fileID: 2715203370210894421, guid: 46a4041cbea110b4d86b08cb7e606239, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 4.3195504e-16
+      value: 0.0000000073996866
       objectReference: {fileID: 0}
     - target: {fileID: 2715203370210894421, guid: 46a4041cbea110b4d86b08cb7e606239, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 1.4771277e-17
+      value: -8.6936736e-10
       objectReference: {fileID: 0}
     - target: {fileID: 2715203370721256856, guid: 46a4041cbea110b4d86b08cb7e606239, type: 3}
       propertyPath: m_RootOrder
@@ -390,7 +394,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: DogController
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 601165991, guid: 46a4041cbea110b4d86b08cb7e606239, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 46a4041cbea110b4d86b08cb7e606239, type: 3}
 --- !u!1 &1930564355
 GameObject:

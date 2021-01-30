@@ -29,6 +29,7 @@ public class MovementController : MonoBehaviour
 		_capsuleCollider = GetComponent<CapsuleCollider>();
 		_dogGrounding = GetComponent<DogGrounding>();
 		_ignoreLayer = ~_ignoreLayer;
+		Camera.main.transform.parent = null; 
 	}
 
 
@@ -37,13 +38,18 @@ public class MovementController : MonoBehaviour
 	{
 		_inputDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 
-		_inputDirection = transform.TransformDirection(_inputDirection);
-		
+		_inputDirection = Camera.main.transform.TransformDirection(_inputDirection);
+		Debug.DrawRay(transform.position, _inputDirection * 4.1f, Color.red);
+
+		if (_inputDirection.magnitude < 0.2f)
+		{
+			_moveDirection = Vector3.zero;
+			return;
+		}
 
 		_colliderCenter = transform.TransformPoint(_capsuleCollider.center);
 
-		if(_dogGrounding.IsGrounded)
-			transform.Rotate(transform.up, Input.GetAxis("Horizontal"));
+		transform.rotation = Quaternion.LookRotation(_moveDirection);
 
 		HandleMovement();
 
@@ -91,7 +97,6 @@ public class MovementController : MonoBehaviour
 	private void MoveAirborne()
 	{
 		_moveDirection = Vector3.SmoothDamp(_moveDirection, _inputDirection * _airborneSpeedMultiplier, ref _airborneMoveVelocity, 0.4f);
-		transform.rotation = Quaternion.LookRotation(Vector3.Lerp(transform.forward, _moveDirection, Time.deltaTime * 2));
 	}
 
 	private bool RaycastHittingGround()

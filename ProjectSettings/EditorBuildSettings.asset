@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Menu_Scenes/Main_Menu.unity
+    guid: adf60b0217677e242a6f074e2af69125
+  - enabled: 1
+    path: Assets/Scenes/Robin_Greybox.unity
+    guid: 3b044086900028b41a8999ade5f1e6ae
+  - enabled: 1
+    path: Assets/Scenes/Menu_Scenes/Credits.unity
+    guid: 3c40bc43ddfdb2441836067e8c5656e7
   m_configObjects: {}
