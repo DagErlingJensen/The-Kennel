@@ -21,16 +21,5 @@ public class DogGraphics : MonoBehaviour
 
 
 
-		float angle = Vector3.Angle(graphicsGameObject.transform.forward, _movementController.MoveDirection);
-
-		if(angle > 150)
-		{
-			graphicsGameObject.transform.rotation = Quaternion.LookRotation(_movementController.MoveDirection);
-		}
-		else
-		{
-			graphicsGameObject.transform.rotation = Quaternion.LookRotation(Vector3.SmoothDamp(graphicsGameObject.transform.forward, _movementController.MoveDirection, ref _rotateVelocity, 0.2f));
-		}
-
 	}
 }
