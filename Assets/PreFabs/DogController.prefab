@@ -118,8 +118,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2715203369327533063}
-  m_LocalRotation: {x: 0.116684444, y: 1e-45, z: -0, w: 0.99316907}
-  m_LocalPosition: {x: 3.3551545, y: -0.7268877, z: -207.43578}
+  m_LocalRotation: {x: 0.11668446, y: 0.000000029598748, z: -0.0000000034774683, w: 0.99316907}
+  m_LocalPosition: {x: -0.23000002, y: 6.0900006, z: -16.079998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2715203369293554831}
@@ -187,8 +187,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2715203370210894442}
-  m_LocalRotation: {x: 0.116684444, y: 1e-45, z: -0, w: 0.99316907}
-  m_LocalPosition: {x: 3.3551545, y: -0.7268877, z: -207.43578}
+  m_LocalRotation: {x: 0.11668446, y: 0.000000029598748, z: -0.0000000034774683, w: 0.99316907}
+  m_LocalPosition: {x: -0.23000002, y: 6.0900006, z: -16.079998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2715203370721256856}
@@ -291,7 +291,7 @@ GameObject:
   m_Layer: 0
   m_Name: DogController
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -353,15 +353,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7352850997328453622, guid: 81e0217ffe4d76d48b747649f07b66ff, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.3520179
+      value: -0.23313665
       objectReference: {fileID: 0}
     - target: {fileID: 7352850997328453622, guid: 81e0217ffe4d76d48b747649f07b66ff, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.886888
+      value: 0.9300003
       objectReference: {fileID: 0}
     - target: {fileID: 7352850997328453622, guid: 81e0217ffe4d76d48b747649f07b66ff, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -191.39577
+      value: -0.0399971
       objectReference: {fileID: 0}
     - target: {fileID: 7352850997328453622, guid: 81e0217ffe4d76d48b747649f07b66ff, type: 3}
       propertyPath: m_LocalRotation.w
