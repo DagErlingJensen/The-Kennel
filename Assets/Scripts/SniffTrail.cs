@@ -5,10 +5,11 @@ using UnityEngine.AI;
 
 public class SniffTrail : MonoBehaviour
 {
-	[SerializeField] Transform _objective;
 	NavMeshAgent _agent;
 	DogGraphics _dogGraphics;
 	[SerializeField] TrailRenderer _trailRenderer;
+
+	public Transform Objective { get; set; }
 
 	private void Awake()
 	{
@@ -39,6 +40,6 @@ public class SniffTrail : MonoBehaviour
 
 		_trailRenderer.Clear();
 
-		_agent.SetDestination(_objective.position);
+		_agent.SetDestination(Objective.position);
 	}
 }
