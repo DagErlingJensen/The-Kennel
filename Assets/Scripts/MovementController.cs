@@ -60,13 +60,7 @@ public class MovementController : MonoBehaviour
 	void HandleMovement()
 	{
 
-		if (InputDirectionIntoWall())
-		{
-			Debug.Log("hitting wall");
 
-			MoveParallelToWall();
-			return;
-		}
 		if (RaycastHittingGround())
 		{
 			MoveParallelToGround();
