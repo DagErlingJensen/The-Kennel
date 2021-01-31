@@ -5,9 +5,10 @@ using UnityEngine.AI;
 
 public class SniffTrail : MonoBehaviour
 {
+	[SerializeField] ParticleSystem _particle;
 	NavMeshAgent _agent;
 	DogGraphics _dogGraphics;
-	[SerializeField] TrailRenderer _trailRenderer;
+
 
 	public Transform Objective { get; set; }
 
@@ -38,8 +39,9 @@ public class SniffTrail : MonoBehaviour
 		NavMesh.SamplePosition(_dogGraphics.transform.position, out hit, 10, NavMesh.AllAreas);
 		_agent.Warp(hit.position);
 
-		_trailRenderer.Clear();
-
+		_particle.Stop();
 		_agent.SetDestination(Objective.position);
+		_particle.Play();
+
 	}
 }

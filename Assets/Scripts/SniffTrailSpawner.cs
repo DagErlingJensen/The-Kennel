@@ -6,7 +6,7 @@ public class SniffTrailSpawner : MonoBehaviour
 
 	private void Start()
 	{
-		GameObject[] pickups = GameObject.FindGameObjectsWithTag("Pickup");
+		GameObject[] pickups = GameObject.FindGameObjectsWithTag("PickUp");
 
 		foreach (GameObject pickup in pickups)
 		{
