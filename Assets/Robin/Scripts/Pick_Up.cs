@@ -23,8 +23,9 @@ public class Pick_Up : MonoBehaviour
             pickUps++;
             Debug.Log("Picked Up" + pickUps);
         }
-        if (pickUps >= 3)
+        if (pickUps >= 3 /*&& other == GameObject.FindGameObjectWithTag("Door")*/)
         {
+            Debug.Log("Door");
             doorUnlock.openDoor = true;
         }
 

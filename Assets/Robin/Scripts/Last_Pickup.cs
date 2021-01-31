@@ -9,8 +9,8 @@ public class Last_Pickup : MonoBehaviour
     public GameObject lastPickup;
     void Awake()
     {
-        int variable = Random.Range(0, lastPickUpLocations.Length);
-        Instantiate(lastPickup, lastPickUpLocations[variable-1].position, lastPickUpLocations[variable-1].rotation);
+        int variable = Random.Range(0, lastPickUpLocations.Length -1);
+        Instantiate(lastPickup, lastPickUpLocations[variable].position, lastPickUpLocations[variable].rotation);
     }
     void Update()
     {
