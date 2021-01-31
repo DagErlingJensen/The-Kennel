@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Door
   - PickUp
-  - Temple
   layers:
   - Default
   - TransparentFX
